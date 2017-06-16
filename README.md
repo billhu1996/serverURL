@@ -18,6 +18,6 @@ end
 ```
 let url = "https://github.com/api/v2/saerverurl/_table/"
 //获取真实URL
-label.text = HBServerURL.getWithURL(url, apikey: "abcdefgrtghjkloiuyt")
+label.text = HBServerURL.getWithURL(url, apikey: "abcdefgrtghjkloiuyt") //now label.text == https://real.url.com/api
 
 ```
