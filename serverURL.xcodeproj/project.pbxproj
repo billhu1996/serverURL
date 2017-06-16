@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A93ED9001EF3FEEF000DEF4F /* HBServerURL.m in Sources */ = {isa = PBXBuildFile; fileRef = A93ED8FF1EF3FEEF000DEF4F /* HBServerURL.m */; };
 		A999D4171EF3A5E100E69694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4161EF3A5E100E69694 /* AppDelegate.swift */; };
 		A999D4191EF3A5E100E69694 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4181EF3A5E100E69694 /* ViewController.swift */; };
 		A999D41C1EF3A5E100E69694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A999D41A1EF3A5E100E69694 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		A999D4211EF3A5E100E69694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A999D41F1EF3A5E100E69694 /* LaunchScreen.storyboard */; };
 		A999D42C1EF3A5E100E69694 /* serverURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D42B1EF3A5E100E69694 /* serverURLTests.swift */; };
 		A999D4371EF3A5E100E69694 /* serverURLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4361EF3A5E100E69694 /* serverURLUITests.swift */; };
-		A999D4491EF3BF8000E69694 /* HBServerURL.m in Sources */ = {isa = PBXBuildFile; fileRef = A999D4481EF3BF8000E69694 /* HBServerURL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A93ED8FE1EF3FEEF000DEF4F /* HBServerURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HBServerURL.h; path = ServerURL/HBServerURL.h; sourceTree = "<group>"; };
+		A93ED8FF1EF3FEEF000DEF4F /* HBServerURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBServerURL.m; path = ServerURL/HBServerURL.m; sourceTree = "<group>"; };
 		A999D4131EF3A5E100E69694 /* serverURL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = serverURL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A999D4161EF3A5E100E69694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A999D4181EF3A5E100E69694 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +51,6 @@
 		A999D4361EF3A5E100E69694 /* serverURLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serverURLUITests.swift; sourceTree = "<group>"; };
 		A999D4381EF3A5E100E69694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A999D4461EF3BF7F00E69694 /* serverURL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "serverURL-Bridging-Header.h"; sourceTree = "<group>"; };
-		A999D4471EF3BF8000E69694 /* HBServerURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBServerURL.h; sourceTree = "<group>"; };
-		A999D4481EF3BF8000E69694 /* HBServerURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBServerURL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A93ED8FD1EF3FEC0000DEF4F /* ServerURL */ = {
+			isa = PBXGroup;
+			children = (
+				A93ED8FE1EF3FEEF000DEF4F /* HBServerURL.h */,
+				A93ED8FF1EF3FEEF000DEF4F /* HBServerURL.m */,
+			);
+			name = ServerURL;
+			sourceTree = "<group>";
+		};
 		A999D40A1EF3A5E100E69694 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +110,13 @@
 		A999D4151EF3A5E100E69694 /* serverURL */ = {
 			isa = PBXGroup;
 			children = (
+				A93ED8FD1EF3FEC0000DEF4F /* ServerURL */,
 				A999D4161EF3A5E100E69694 /* AppDelegate.swift */,
 				A999D4181EF3A5E100E69694 /* ViewController.swift */,
 				A999D41A1EF3A5E100E69694 /* Main.storyboard */,
 				A999D41D1EF3A5E100E69694 /* Assets.xcassets */,
 				A999D41F1EF3A5E100E69694 /* LaunchScreen.storyboard */,
 				A999D4221EF3A5E100E69694 /* Info.plist */,
-				A999D4471EF3BF8000E69694 /* HBServerURL.h */,
-				A999D4481EF3BF8000E69694 /* HBServerURL.m */,
 				A999D4461EF3BF7F00E69694 /* serverURL-Bridging-Header.h */,
 			);
 			path = serverURL;
@@ -267,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A999D4491EF3BF8000E69694 /* HBServerURL.m in Sources */,
+				A93ED9001EF3FEEF000DEF4F /* HBServerURL.m in Sources */,
 				A999D4191EF3A5E100E69694 /* ViewController.swift in Sources */,
 				A999D4171EF3A5E100E69694 /* AppDelegate.swift in Sources */,
 			);
