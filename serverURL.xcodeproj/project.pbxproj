@@ -14,6 +14,7 @@
 		A999D4211EF3A5E100E69694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A999D41F1EF3A5E100E69694 /* LaunchScreen.storyboard */; };
 		A999D42C1EF3A5E100E69694 /* serverURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D42B1EF3A5E100E69694 /* serverURLTests.swift */; };
 		A999D4371EF3A5E100E69694 /* serverURLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4361EF3A5E100E69694 /* serverURLUITests.swift */; };
+		A999D4491EF3BF8000E69694 /* HBServerURL.m in Sources */ = {isa = PBXBuildFile; fileRef = A999D4481EF3BF8000E69694 /* HBServerURL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		A999D4321EF3A5E100E69694 /* serverURLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = serverURLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A999D4361EF3A5E100E69694 /* serverURLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serverURLUITests.swift; sourceTree = "<group>"; };
 		A999D4381EF3A5E100E69694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A999D4461EF3BF7F00E69694 /* serverURL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "serverURL-Bridging-Header.h"; sourceTree = "<group>"; };
+		A999D4471EF3BF8000E69694 /* HBServerURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBServerURL.h; sourceTree = "<group>"; };
+		A999D4481EF3BF8000E69694 /* HBServerURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBServerURL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,9 @@
 				A999D41D1EF3A5E100E69694 /* Assets.xcassets */,
 				A999D41F1EF3A5E100E69694 /* LaunchScreen.storyboard */,
 				A999D4221EF3A5E100E69694 /* Info.plist */,
+				A999D4471EF3BF8000E69694 /* HBServerURL.h */,
+				A999D4481EF3BF8000E69694 /* HBServerURL.m */,
+				A999D4461EF3BF7F00E69694 /* serverURL-Bridging-Header.h */,
 			);
 			path = serverURL;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				TargetAttributes = {
 					A999D4121EF3A5E100E69694 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A999D4261EF3A5E100E69694 = {
@@ -259,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A999D4491EF3BF8000E69694 /* HBServerURL.m in Sources */,
 				A999D4191EF3A5E100E69694 /* ViewController.swift in Sources */,
 				A999D4171EF3A5E100E69694 /* AppDelegate.swift in Sources */,
 			);
@@ -414,10 +423,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = serverURL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.hu.serverURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "serverURL/serverURL-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,10 +438,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = serverURL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.hu.serverURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "serverURL/serverURL-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -507,6 +521,7 @@
 				A999D43D1EF3A5E100E69694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A999D43E1EF3A5E100E69694 /* Build configuration list for PBXNativeTarget "serverURLTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +530,7 @@
 				A999D4401EF3A5E100E69694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A999D4411EF3A5E100E69694 /* Build configuration list for PBXNativeTarget "serverURLUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +539,7 @@
 				A999D4431EF3A5E100E69694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
