@@ -13,11 +13,11 @@
 +(NSString *)getWithURL:(NSString *)URL
                  apikey:(NSString *)apikey {
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *appName = infoDict[@"CFBundleDisplayName"];
+    NSString *appBundleID = [[NSBundle mainBundle] bundleIdentifier];
     NSString *version = infoDict[@"CFBundleShortVersionString"];
     NSString *realURL = [[NSUserDefaults standardUserDefaults] objectForKey:@"HBServerURL"];
     if (!realURL || [realURL isEqualToString:@"https://www.apple.com"]) {
-        realURL = [self getWithVersion:version appName:appName url:URL apikey:apikey];
+        realURL = [self getWithVersion:version appBundleID:appBundleID url:URL apikey:apikey];
         [[NSUserDefaults standardUserDefaults] setObject:realURL forKey:@"HBServerURL"];
         
     }
@@ -25,10 +25,10 @@
 }
 
 +(NSString *)getWithVersion:(NSString *)version
-             appName:(NSString *)appName
+                appBundleID:(NSString *)appBundleID
                  url:(NSString *)url
               apikey:(NSString *)apikey {
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?filter=version=%@&api_key=%@", url, appName, version, apikey]];
+    NSURL *URL = [NSURL URLWithString:[[NSString stringWithFormat:@"%@?api_key=%@&filter=(version=%@) and (bundle_id=%@)", url, apikey, version, appBundleID] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     [request setHTTPMethod:@"GET"];
     [request setTimeoutInterval:60];
@@ -41,7 +41,7 @@
     NSError *error;
     NSData __block *data;
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request                completionHandler:^(NSData * _Nullable _data, NSURLResponse * _Nullable _response, NSError * _Nullable _error) {
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable _data, NSURLResponse * _Nullable _response, NSError * _Nullable _error) {
         
         data = _data;
         dispatch_semaphore_signal(semaphore);
