@@ -10,24 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var getLabel: UILabel!
+    let username = ""
+    let password = ""
+    let apikey = ""
+    let tableurl = "https://api.iflab.org/api/v2/serverurl/_table/serverurl"
+    let loginurl = "https://api.iflab.org/api/v2/user/session"
+    let version = "3.6.2"
+    let nickName = "Bistu云盘"
+    let uploadURL = "https://api.iflab.org/api/v2/serverurl/_table/serverurl"
+    let realURL = "https://panweb.bistu.edu.cn"
+
+    @IBAction func getURL(_ sender: UIButton) {
+        let s = HBServerURL.getWithVersion(version, appBundleID: nickName, url: uploadURL, apikey: apikey)
+        if s == "https://www.example.com" {
+            getLabel.text = "error"
+        } else {
+            getLabel.text = s
+        }
+    }
+    
+    @IBAction func sentURL(_ sender: UIButton) {
+        let s = HBServerURL.setWithUsername(username, password: password, loginURL: loginurl, url: tableurl, apikey: apikey, version: version, nickName: nickName, realURL: realURL)
+        if s == "https://www.example.com" {
+            getLabel.text = "error"
+        } else {
+            getLabel.text = s
+        }
+    }
+    
+    @IBAction func editURL(_ sender: UIButton) {
+        let s = HBServerURL.eidt(withUsername: username, password: password, loginURL: loginurl, url: tableurl, apikey: apikey, version: version, nickName: nickName, newRealURL: realURL)
+        if s == "https://www.example.com" {
+            getLabel.text = "error"
+        } else {
+            getLabel.text = s
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 40))
-        view.addSubview(label)
-        
-        //存储url表
-        let url = "https://api.iflab.org/api/v2/saerverurl/_table/"
-        //获取真实URL
-        label.text = HBServerURL.getWithURL(url, apikey: "c4c6a2a605c559a089f785394561919eecf2c548b631f3256678870f07691b50")
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

@@ -34,6 +34,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A91C21071EF81EDA00E23003 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A93ED8FE1EF3FEEF000DEF4F /* HBServerURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HBServerURL.h; path = ServerURL/HBServerURL.h; sourceTree = "<group>"; };
 		A93ED8FF1EF3FEEF000DEF4F /* HBServerURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBServerURL.m; path = ServerURL/HBServerURL.m; sourceTree = "<group>"; };
@@ -150,6 +163,7 @@
 				A999D40F1EF3A5E100E69694 /* Sources */,
 				A999D4101EF3A5E100E69694 /* Frameworks */,
 				A999D4111EF3A5E100E69694 /* Resources */,
+				A91C21071EF81EDA00E23003 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -434,6 +448,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = serverURL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.hu.serverURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "serverURL/serverURL-Bridging-Header.h";
@@ -449,6 +464,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = serverURL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.hu.serverURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "serverURL/serverURL-Bridging-Header.h";

@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="serverURL" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRg-bl-69j">
+                                <rect key="frame" x="20" y="40" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9w-JP-UnS">
+                                <rect key="frame" x="152.5" y="81" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="N4e-YD-Bg1"/>
+                                </constraints>
+                                <state key="normal" title="获取URL"/>
+                                <connections>
+                                    <action selector="getURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v9K-3W-BOk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-ip-TqE">
+                                <rect key="frame" x="152" y="211" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="kiE-ty-NNn"/>
+                                </constraints>
+                                <state key="normal" title="创建URL"/>
+                                <connections>
+                                    <action selector="sentURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6h-eQ-rZw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gV1-OY-EUV">
+                                <rect key="frame" x="152" y="281" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ERH-d5-L4q"/>
+                                </constraints>
+                                <state key="normal" title="修改URL"/>
+                                <connections>
+                                    <action selector="editURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D8o-CW-3Uf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="o9w-JP-UnS" firstAttribute="top" secondItem="rRg-bl-69j" secondAttribute="bottom" constant="20" id="7e4-oY-F0N"/>
+                            <constraint firstItem="rRg-bl-69j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="LZH-UK-hhH"/>
+                            <constraint firstItem="o9w-JP-UnS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zqz-zE-eEF"/>
+                            <constraint firstAttribute="trailing" secondItem="rRg-bl-69j" secondAttribute="trailing" constant="20" id="beP-i7-XrS"/>
+                            <constraint firstItem="Gbb-ip-TqE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i4x-oT-qpv"/>
+                            <constraint firstItem="rRg-bl-69j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="jVR-67-QTQ"/>
+                            <constraint firstItem="Gbb-ip-TqE" firstAttribute="top" secondItem="o9w-JP-UnS" secondAttribute="bottom" constant="100" id="kf3-W7-TY1"/>
+                            <constraint firstItem="gV1-OY-EUV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSK-2D-k3t"/>
+                            <constraint firstItem="gV1-OY-EUV" firstAttribute="top" secondItem="Gbb-ip-TqE" secondAttribute="bottom" constant="40" id="yqq-Iq-ScO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getLabel" destination="rRg-bl-69j" id="UtZ-2c-Rwl"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="218.1409295352324"/>
         </scene>
     </scenes>
 </document>
