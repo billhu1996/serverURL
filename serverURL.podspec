@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author             = { "billhu1996" => "billhu1996@gmail.com" }
   s.platform     = :ios, "5.0"
   s.source       = { :git => "https://github.com/billhu1996/serverURL.git", :tag => "#{s.version}" }
-  s.source_files  = "serverURL/*.{h,m}"
+  s.source_files  = "ServerURL/serverURL/*.{h,m}"
   s.framework    = "UIKit"
   s.requires_arc = true
 
