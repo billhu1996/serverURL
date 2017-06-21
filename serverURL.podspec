@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "serverURL"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "ifLab在BISTU校内应用为了配合App Store审核所做的妥协."
   s.homepage     = "https://github.com/billhu1996/serverURL"
   s.license      = "MIT"
